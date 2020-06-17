@@ -847,7 +847,7 @@ AddTotals: true
 # Click sound when using gui
 # Set to none for no sound
 ClickSound: 
-  Sound: 'UI_BUTTON_CLICK'
+  Sound: 'CLICK'
   Volume: 1.0
   Pitch: 1.0
   

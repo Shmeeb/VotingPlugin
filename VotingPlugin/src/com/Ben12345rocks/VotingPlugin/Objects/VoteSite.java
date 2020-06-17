@@ -8,12 +8,12 @@ import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardBuilder;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardHandler;
-import com.Ben12345rocks.AdvancedCore.Util.Item.ItemBuilder;
-import com.Ben12345rocks.AdvancedCore.Util.Messages.StringParser;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.ArrayUtils;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.MiscUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardBuilder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Item.ItemBuilder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Messages.StringParser;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.ArrayUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.MiscUtils;
 import com.Ben12345rocks.VotingPlugin.BungeeHandler;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Config.Config;

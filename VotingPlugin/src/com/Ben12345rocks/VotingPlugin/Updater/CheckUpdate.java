@@ -5,7 +5,7 @@ import java.util.TimerTask;
 
 import org.bukkit.Bukkit;
 
-import com.Ben12345rocks.AdvancedCore.Util.Updater.Updater;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Updater.Updater;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Config.Config;
 

@@ -24,27 +24,26 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.PluginManager;
 
-import com.Ben12345rocks.AdvancedCore.AdvancedCorePlugin;
-import com.Ben12345rocks.AdvancedCore.CommandAPI.CommandHandler;
-import com.Ben12345rocks.AdvancedCore.NMSManager.NMSManager;
-import com.Ben12345rocks.AdvancedCore.Rewards.Reward;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardHandler;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardPlaceholderHandle;
-import com.Ben12345rocks.AdvancedCore.Rewards.Injected.RewardInject;
-import com.Ben12345rocks.AdvancedCore.Rewards.Injected.RewardInjectConfigurationSection;
-import com.Ben12345rocks.AdvancedCore.Rewards.Injected.RewardInjectInt;
-import com.Ben12345rocks.AdvancedCore.Rewards.Injected.RewardInjectValidator;
-import com.Ben12345rocks.AdvancedCore.UserManager.UUID;
-import com.Ben12345rocks.AdvancedCore.UserManager.UserStorage;
-import com.Ben12345rocks.AdvancedCore.Util.EditGUI.EditGUIButton;
-import com.Ben12345rocks.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueNumber;
-import com.Ben12345rocks.AdvancedCore.Util.Item.ItemBuilder;
-import com.Ben12345rocks.AdvancedCore.Util.Javascript.JavascriptPlaceholderRequest;
-import com.Ben12345rocks.AdvancedCore.Util.Logger.Logger;
-import com.Ben12345rocks.AdvancedCore.Util.Messages.StringParser;
-import com.Ben12345rocks.AdvancedCore.Util.Metrics.BStatsMetrics;
-import com.Ben12345rocks.AdvancedCore.Util.Metrics.MCStatsMetrics;
-import com.Ben12345rocks.AdvancedCore.Util.Updater.Updater;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.AdvancedCorePlugin;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.CommandAPI.CommandHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.NMSManager.NMSManager;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.Reward;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardPlaceholderHandle;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.Injected.RewardInject;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.Injected.RewardInjectConfigurationSection;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.Injected.RewardInjectInt;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.Injected.RewardInjectValidator;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UUID;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserStorage;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.EditGUI.EditGUIButton;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueNumber;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Item.ItemBuilder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Javascript.JavascriptPlaceholderRequest;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Logger.Logger;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Messages.StringParser;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Metrics.MCStatsMetrics;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Updater.Updater;
 import com.Ben12345rocks.VotingPlugin.Commands.CommandLoader;
 import com.Ben12345rocks.VotingPlugin.Commands.Commands;
 import com.Ben12345rocks.VotingPlugin.Commands.Executers.CommandAdminVote;
@@ -485,291 +484,7 @@ public class Main extends AdvancedCorePlugin {
 			plugin.getLogger().info("Can't submit metrics stats");
 		}
 
-		BStatsMetrics metrics = new BStatsMetrics(this);
-
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_firstvote") {
-
-			@Override
-			public String getValue() {
-				if (RewardHandler.getInstance().hasRewards(Config.getInstance().getData(),
-						Config.getInstance().getFirstVoteRewardsPath())) {
-					return "True";
-				} else {
-					return "False";
-				}
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_everysite") {
-
-			@Override
-			public String getValue() {
-				if (RewardHandler.getInstance().hasRewards(ConfigVoteSites.getInstance().getData(),
-						ConfigVoteSites.getInstance().getEverySiteRewardPath())) {
-					return "True";
-				} else {
-					return "False";
-				}
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_allsites") {
-
-			@Override
-			public String getValue() {
-				if (RewardHandler.getInstance().hasRewards(Config.getInstance().getData(),
-						Config.getInstance().getAllSitesRewardPath())) {
-					return "True";
-				} else {
-					return "False";
-				}
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_cumulative") {
-
-			@Override
-			public String getValue() {
-				if (Config.getInstance().getCumulativeVotes().size() == 0) {
-					return "False";
-				} else {
-					for (String cum : Config.getInstance().getCumulativeVotes()) {
-						if (Config.getInstance().getCumulativeRewardEnabled(Integer.parseInt(cum))) {
-							return "True";
-						}
-					}
-					return "False";
-				}
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_voteparty") {
-
-			@Override
-			public String getValue() {
-				if (!Config.getInstance().getVotePartyEnabled()) {
-					return "False";
-				} else {
-					return "True";
-				}
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_milestone") {
-
-			@Override
-			public String getValue() {
-				if (Config.getInstance().getMilestoneVotes().size() == 0) {
-					return "False";
-				} else {
-					for (String milestone : Config.getInstance().getMilestoneVotes()) {
-						if (Config.getInstance().getMilestoneRewardEnabled(Integer.parseInt(milestone))) {
-							return "True";
-						}
-					}
-					return "False";
-				}
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_anysitereward") {
-
-			@Override
-			public String getValue() {
-				if (RewardHandler.getInstance().hasRewards(Config.getInstance().getData(),
-						Config.getInstance().getAnySiteRewardsPath())) {
-					return "True";
-				} else {
-					return "False";
-				}
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_votestreakday") {
-
-			@Override
-			public String getValue() {
-				for (String s : Config.getInstance().getVoteStreakVotes("Day")) {
-
-					if (Config.getInstance().getVoteStreakRewardEnabled("Day", s)
-							&& RewardHandler.getInstance().hasRewards(Config.getInstance().getData(),
-									Config.getInstance().getVoteStreakRewardsPath("Day", s))) {
-						return "True";
-					}
-
-				}
-				return "False";
-			}
-		});
-
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_votestreakweek") {
-
-			@Override
-			public String getValue() {
-				for (String s : Config.getInstance().getVoteStreakVotes("Week")) {
-
-					if (Config.getInstance().getVoteStreakRewardEnabled("Week", s)
-							&& RewardHandler.getInstance().hasRewards(Config.getInstance().getData(),
-									Config.getInstance().getVoteStreakRewardsPath("Week", s))) {
-						return "True";
-					}
-				}
-
-				return "False";
-			}
-		});
-
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("extrarewards_votestreakmonth") {
-
-			@Override
-			public String getValue() {
-				for (String s : Config.getInstance().getVoteStreakVotes("Month")) {
-
-					if (Config.getInstance().getVoteStreakRewardEnabled("Month", s)
-							&& RewardHandler.getInstance().hasRewards(Config.getInstance().getData(),
-									Config.getInstance().getVoteStreakRewardsPath("Month", s))) {
-						return "True";
-					}
-				}
-
-				return "False";
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("numberofsites") {
-
-			@Override
-			public String getValue() {
-				return "" + plugin.voteSites.size();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("numberofrewards") {
-
-			@Override
-			public String getValue() {
-				return "" + RewardHandler.getInstance().getRewards().size();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("autocreatevotesites") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().isAutoCreateVoteSites();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("sendscoreboards") {
-
-			@Override
-			public String getValue() {
-				return "" + getOptions().isSendScoreboards();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("numberofuser") {
-
-			@Override
-			public String getValue() {
-				int total = UserManager.getInstance().getAllUUIDs().size();
-				int num = total / 100;
-				num = num * 100;
-				int num2 = (total + 100) / 100;
-				num2 = num2 * 100;
-				if (total < 1000) {
-					num = 0;
-					num2 = 1000;
-				}
-				return "" + num + "-" + num2;
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("data_storage") {
-
-			@Override
-			public String getValue() {
-				return getOptions().getStorageType().toString();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("DisableCheckOnWorldChange") {
-
-			@Override
-			public String getValue() {
-				return "" + getOptions().isDisableCheckOnWorldChange();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("votereminding_enabled") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().getVoteRemindingEnabled();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("UseGUI_Today") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().isCommandsUseGUIToday();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("UseGUI_TopVoter") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().isCommandsUseGUITopVoter();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("UseGUI_Last") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().isCommandsUseGUILast();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("UseGUI_Next") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().isCommandsUseGUINext();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("UseGUI_Total") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().isCommandsUseGUITotal();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("UseGUI_Vote") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().isCommandsUseGUIVote();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("UseGUI_Best") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().isCommandsUseGUIBest();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("UseGUI_Streak") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().isCommandsUseGUIStreak();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("LoadTopVoter_Monthly") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().getLoadTopVoterMonthly();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("LoadTopVoter_Weekly") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().getLoadTopVoterWeekly();
-			}
-		});
-		metrics.addCustomChart(new BStatsMetrics.SimplePie("LoadTopVoter_Daily") {
-
-			@Override
-			public String getValue() {
-				return "" + Config.getInstance().getLoadTopVoterDaily();
-			}
-		});
+		// remove bstats metrics as the file is corrupted
 	}
 
 	@Override
@@ -878,7 +593,7 @@ public class Main extends AdvancedCorePlugin {
 		RewardHandler.getInstance().addInjectedReward(new RewardInjectInt("Points", 0) {
 
 			@Override
-			public String onRewardRequest(Reward reward, com.Ben12345rocks.AdvancedCore.UserManager.User user, int num,
+			public String onRewardRequest(Reward reward, com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.User user, int num,
 					HashMap<String, String> placeholders) {
 				UserManager.getInstance().getVotingPluginUser(user).addPoints(num);
 				return null;
@@ -904,7 +619,7 @@ public class Main extends AdvancedCorePlugin {
 		RewardHandler.getInstance().addInjectedReward(new RewardInjectConfigurationSection("VoteBossBar") {
 
 			@Override
-			public String onRewardRequested(Reward arg0, com.Ben12345rocks.AdvancedCore.UserManager.User user,
+			public String onRewardRequested(Reward arg0, com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.User user,
 					ConfigurationSection section, HashMap<String, String> placeholders) {
 				if (section.getBoolean("Enabled")) {
 					user.sendBossBar(
@@ -923,7 +638,7 @@ public class Main extends AdvancedCorePlugin {
 			RewardHandler.getInstance().addPlaceholder(new RewardPlaceholderHandle("Total_" + top.toString()) {
 
 				@Override
-				public String getValue(Reward reward, com.Ben12345rocks.AdvancedCore.UserManager.User user) {
+				public String getValue(Reward reward, com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.User user) {
 					User vUser = UserManager.getInstance().getVotingPluginUser(user);
 					return "" + vUser.getTotal(top);
 				}
@@ -989,6 +704,7 @@ public class Main extends AdvancedCorePlugin {
 
 		// disable plugin for older versions below 1.12
 
+		/*
 		if (NMSManager.getInstance().isVersion("1.7", "1.8", "1.9", "1.10", "1.11", "1.12")) {
 			plugin.getLogger().severe("Detected running " + Bukkit.getVersion()
 					+ ", this version is not supported on this build, read the plugin page. Disabling...");
@@ -999,6 +715,7 @@ public class Main extends AdvancedCorePlugin {
 				plugin.getLogger().warning("Overriding version disable, beware of using this! This may cause issues!");
 			}
 		}
+		 */
 
 		setupFiles();
 

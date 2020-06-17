@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardBuilder;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardHandler;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardOptions;
-import com.Ben12345rocks.AdvancedCore.TimeChecker.TimeChecker;
-import com.Ben12345rocks.AdvancedCore.UserManager.UUID;
-import com.Ben12345rocks.AdvancedCore.Util.Messages.StringParser;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.MiscUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardBuilder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardOptions;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.TimeChecker.TimeChecker;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UUID;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Messages.StringParser;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.MiscUtils;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Config.Config;
 import com.Ben12345rocks.VotingPlugin.Events.PlayerReceivePointsEvent;
@@ -36,7 +36,7 @@ import com.Ben12345rocks.VotingPlugin.VoteReminding.VoteReminding;
 /**
  * The Class User.
  */
-public class User extends com.Ben12345rocks.AdvancedCore.UserManager.User {
+public class User extends com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.User {
 
 	/** The plugin. */
 	static Main plugin = Main.plugin;

@@ -5,10 +5,10 @@ import java.util.UUID;
 
 import org.bukkit.Bukkit;
 
-import com.Ben12345rocks.AdvancedCore.Util.Encryption.EncryptionHandler;
-import com.Ben12345rocks.AdvancedCore.Util.Sockets.ClientHandler;
-import com.Ben12345rocks.AdvancedCore.Util.Sockets.SocketHandler;
-import com.Ben12345rocks.AdvancedCore.Util.Sockets.SocketReceiver;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Encryption.EncryptionHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Sockets.ClientHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Sockets.SocketHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Sockets.SocketReceiver;
 import com.Ben12345rocks.VotingPlugin.Config.Config;
 import com.Ben12345rocks.VotingPlugin.Objects.User;
 import com.Ben12345rocks.VotingPlugin.Objects.VoteSite;

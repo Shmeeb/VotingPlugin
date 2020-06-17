@@ -8,8 +8,8 @@ import java.util.Map.Entry;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
-import com.Ben12345rocks.AdvancedCore.Util.Messages.StringParser;
-import com.Ben12345rocks.AdvancedCore.Util.Placeholder.PlaceHolder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Messages.StringParser;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Placeholder.PlaceHolder;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Commands.Commands;
 import com.Ben12345rocks.VotingPlugin.Config.Config;

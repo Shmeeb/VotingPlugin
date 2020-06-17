@@ -2,7 +2,7 @@ package com.Ben12345rocks.VotingPlugin.Util.PlaceHolders;
 
 import org.bukkit.Bukkit;
 
-import com.Ben12345rocks.AdvancedCore.Util.Placeholder.PlaceHolder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Placeholder.PlaceHolder;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Objects.User;
 import com.Ben12345rocks.VotingPlugin.UserManager.UserManager;

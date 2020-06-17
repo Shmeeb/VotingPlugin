@@ -7,13 +7,13 @@ import java.util.Set;
 
 import org.bukkit.configuration.ConfigurationSection;
 
-import com.Ben12345rocks.AdvancedCore.Util.Annotation.AnnotationHandler;
-import com.Ben12345rocks.AdvancedCore.Util.Annotation.ConfigDataBoolean;
-import com.Ben12345rocks.AdvancedCore.Util.Annotation.ConfigDataDouble;
-import com.Ben12345rocks.AdvancedCore.Util.Annotation.ConfigDataInt;
-import com.Ben12345rocks.AdvancedCore.Util.Annotation.ConfigDataListString;
-import com.Ben12345rocks.AdvancedCore.Util.Annotation.ConfigDataString;
-import com.Ben12345rocks.AdvancedCore.YML.YMLFile;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Annotation.AnnotationHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Annotation.ConfigDataBoolean;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Annotation.ConfigDataDouble;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Annotation.ConfigDataInt;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Annotation.ConfigDataListString;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Annotation.ConfigDataString;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.YML.YMLFile;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.TopVoter.TopVoter;
 

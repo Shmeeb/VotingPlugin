@@ -17,26 +17,26 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import com.Ben12345rocks.AdvancedCore.DebugLevel;
-import com.Ben12345rocks.AdvancedCore.CommandAPI.CommandHandler;
-import com.Ben12345rocks.AdvancedCore.CommandAPI.TabCompleteHandle;
-import com.Ben12345rocks.AdvancedCore.CommandAPI.TabCompleteHandler;
-import com.Ben12345rocks.AdvancedCore.Commands.GUI.UserGUI;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardHandler;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardOptions;
-import com.Ben12345rocks.AdvancedCore.UserManager.UUID;
-import com.Ben12345rocks.AdvancedCore.UserManager.UserStorage;
-import com.Ben12345rocks.AdvancedCore.Util.Inventory.BInventory;
-import com.Ben12345rocks.AdvancedCore.Util.Inventory.BInventory.ClickEvent;
-import com.Ben12345rocks.AdvancedCore.Util.Inventory.BInventoryButton;
-import com.Ben12345rocks.AdvancedCore.Util.Messages.StringParser;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.ArrayUtils;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.PlayerUtils;
-import com.Ben12345rocks.AdvancedCore.Util.Placeholder.PlaceHolder;
-import com.Ben12345rocks.AdvancedCore.Util.Updater.Updater;
-import com.Ben12345rocks.AdvancedCore.Util.ValueRequest.ValueRequest;
-import com.Ben12345rocks.AdvancedCore.Util.ValueRequest.Listeners.BooleanListener;
-import com.Ben12345rocks.AdvancedCore.Util.ValueRequest.Listeners.StringListener;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.DebugLevel;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.CommandAPI.CommandHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.CommandAPI.TabCompleteHandle;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.CommandAPI.TabCompleteHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Commands.GUI.UserGUI;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardOptions;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UUID;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserStorage;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Inventory.BInventory;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Inventory.BInventory.ClickEvent;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Inventory.BInventoryButton;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Messages.StringParser;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.ArrayUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.PlayerUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Placeholder.PlaceHolder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Updater.Updater;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.ValueRequest.ValueRequest;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.ValueRequest.Listeners.BooleanListener;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.ValueRequest.Listeners.StringListener;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Commands.Executers.CommandAliases;
 import com.Ben12345rocks.VotingPlugin.Commands.GUI.AdminGUI;
@@ -561,7 +561,7 @@ public class CommandLoader {
 			@Override
 			public void execute(CommandSender sender, String[] args) {
 
-				com.Ben12345rocks.AdvancedCore.Commands.GUI.AdminGUI.getInstance().openGUI((Player) sender);
+				com.Ben12345rocks.VotingPlugin.AdvancedCore.Commands.GUI.AdminGUI.getInstance().openGUI((Player) sender);
 
 			}
 		});
@@ -1210,7 +1210,7 @@ public class CommandLoader {
 					}
 				});
 
-		ArrayList<CommandHandler> avCommands = com.Ben12345rocks.AdvancedCore.Commands.CommandLoader.getInstance()
+		ArrayList<CommandHandler> avCommands = com.Ben12345rocks.VotingPlugin.AdvancedCore.Commands.CommandLoader.getInstance()
 				.getBasicAdminCommands("VotingPlugin");
 		for (CommandHandler cmd : avCommands) {
 			cmd.setPerm(cmd.getPerm() + "|" + adminPerm);
@@ -1282,7 +1282,7 @@ public class CommandLoader {
 
 			@Override
 			public void run() {
-				com.Ben12345rocks.AdvancedCore.Thread.Thread.getInstance().run(new Runnable() {
+				com.Ben12345rocks.VotingPlugin.AdvancedCore.Thread.Thread.getInstance().run(new Runnable() {
 
 					@Override
 					public void run() {
@@ -1571,7 +1571,7 @@ public class CommandLoader {
 
 			@Override
 			public void execute(CommandSender sender, String[] args) {
-				if (com.Ben12345rocks.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
+				if (com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
 					if (!Config.getInstance().isCommandsUseGUILast() || !(sender instanceof Player)) {
 						String playerName = args[1];
 						if (sender instanceof Player) {
@@ -1637,7 +1637,7 @@ public class CommandLoader {
 
 			@Override
 			public void execute(CommandSender sender, String[] args) {
-				if (com.Ben12345rocks.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
+				if (com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
 					if (!Config.getInstance().isCommandsUseGUINext() || !(sender instanceof Player)) {
 						String playerName = args[1];
 						if (sender instanceof Player) {
@@ -1665,7 +1665,7 @@ public class CommandLoader {
 
 			@Override
 			public void execute(CommandSender sender, String[] args) {
-				if (com.Ben12345rocks.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
+				if (com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
 					User user = UserManager.getInstance().getVotingPluginUser(args[1]);
 					String msg = Config.getInstance().getFormatCommandVotePoints()
 							.replace("%Player%", user.getPlayerName()).replace("%Points%", "" + user.getPoints());
@@ -1731,7 +1731,7 @@ public class CommandLoader {
 			@Override
 			public void execute(CommandSender sender, String[] args) {
 				Player player = (Player) sender;
-				if (com.Ben12345rocks.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
+				if (com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
 					PlayerGUIs.getInstance().openVoteGUI(player,
 							UserManager.getInstance().getVotingPluginUser(args[1]));
 				} else {
@@ -2070,7 +2070,7 @@ public class CommandLoader {
 
 			@Override
 			public void execute(CommandSender sender, String[] args) {
-				if (com.Ben12345rocks.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
+				if (com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
 					if (!Config.getInstance().isCommandsUseGUITotal() || !(sender instanceof Player)) {
 						String playerName = args[1];
 						if (sender instanceof Player) {
@@ -2132,7 +2132,7 @@ public class CommandLoader {
 
 			@Override
 			public void execute(CommandSender sender, String[] args) {
-				if (com.Ben12345rocks.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
+				if (com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
 					if (!Config.getInstance().isCommandsUseGUIBest() || !(sender instanceof Player)) {
 						sender.sendMessage(Commands.getInstance().best(sender, args[1]));
 					} else {
@@ -2165,7 +2165,7 @@ public class CommandLoader {
 
 			@Override
 			public void execute(CommandSender sender, String[] args) {
-				if (com.Ben12345rocks.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
+				if (com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserManager.getInstance().userExist(args[1])) {
 					if (!Config.getInstance().isCommandsUseGUIStreak() || !(sender instanceof Player)) {
 						sender.sendMessage(Commands.getInstance().streak(sender, args[1]));
 					} else {
@@ -2241,7 +2241,7 @@ public class CommandLoader {
 			}
 		});
 
-		ArrayList<CommandHandler> avCommands = com.Ben12345rocks.AdvancedCore.Commands.CommandLoader.getInstance()
+		ArrayList<CommandHandler> avCommands = com.Ben12345rocks.VotingPlugin.AdvancedCore.Commands.CommandLoader.getInstance()
 				.getBasicCommands("VotingPlugin");
 		for (CommandHandler cmd : avCommands) {
 			cmd.setPerm(cmd.getPerm() + "|" + playerPerm);

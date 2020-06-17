@@ -8,7 +8,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 
-import com.Ben12345rocks.AdvancedCore.Util.Misc.ArrayUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.ArrayUtils;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Signs.SignHandler;
 
@@ -88,11 +88,11 @@ public class ServerData {
 	 * @return the data
 	 */
 	public ConfigurationSection getData() {
-		ConfigurationSection data = com.Ben12345rocks.AdvancedCore.Data.ServerData.getInstance().getData()
+		ConfigurationSection data = com.Ben12345rocks.VotingPlugin.AdvancedCore.Data.ServerData.getInstance().getData()
 				.getConfigurationSection("VotingPlugin");
 		if (data == null) {
-			com.Ben12345rocks.AdvancedCore.Data.ServerData.getInstance().getData().createSection("VotingPlugin");
-			data = com.Ben12345rocks.AdvancedCore.Data.ServerData.getInstance().getData()
+			com.Ben12345rocks.VotingPlugin.AdvancedCore.Data.ServerData.getInstance().getData().createSection("VotingPlugin");
+			data = com.Ben12345rocks.VotingPlugin.AdvancedCore.Data.ServerData.getInstance().getData()
 					.getConfigurationSection("VotingPlugin");
 		}
 		return data;
@@ -193,7 +193,7 @@ public class ServerData {
 	 * Reload data.
 	 */
 	public void reloadData() {
-		com.Ben12345rocks.AdvancedCore.Data.ServerData.getInstance().reloadData();
+		com.Ben12345rocks.VotingPlugin.AdvancedCore.Data.ServerData.getInstance().reloadData();
 	}
 
 	/**
@@ -221,7 +221,7 @@ public class ServerData {
 	 * Save data.
 	 */
 	public synchronized void saveData() {
-		com.Ben12345rocks.AdvancedCore.Data.ServerData.getInstance().saveData();
+		com.Ben12345rocks.VotingPlugin.AdvancedCore.Data.ServerData.getInstance().saveData();
 	}
 
 	public void setServiceSites(ArrayList<String> list) {

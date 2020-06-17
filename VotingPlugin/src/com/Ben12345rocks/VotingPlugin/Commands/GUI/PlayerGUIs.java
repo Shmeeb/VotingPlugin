@@ -13,16 +13,16 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardHandler;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardOptions;
-import com.Ben12345rocks.AdvancedCore.Util.Inventory.BInventory;
-import com.Ben12345rocks.AdvancedCore.Util.Inventory.BInventory.ClickEvent;
-import com.Ben12345rocks.AdvancedCore.Util.Inventory.BInventoryButton;
-import com.Ben12345rocks.AdvancedCore.Util.Item.ItemBuilder;
-import com.Ben12345rocks.AdvancedCore.Util.Messages.StringParser;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.ArrayUtils;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.MiscUtils;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.PlayerUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardOptions;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Inventory.BInventory;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Inventory.BInventory.ClickEvent;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Inventory.BInventoryButton;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Item.ItemBuilder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Messages.StringParser;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.ArrayUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.MiscUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.PlayerUtils;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Commands.Commands;
 import com.Ben12345rocks.VotingPlugin.Config.Config;
@@ -794,7 +794,7 @@ public class PlayerGUIs {
 			}
 		});
 
-		inv.addButton(new BInventoryButton(new ItemBuilder(Material.CLOCK).setName("&4Last Vote")
+		inv.addButton(new BInventoryButton(new ItemBuilder(Material.WATCH).setName("&4Last Vote")
 				.addLoreLine(Commands.getInstance().voteCommandLastLine(user, site))) {
 
 			@Override
