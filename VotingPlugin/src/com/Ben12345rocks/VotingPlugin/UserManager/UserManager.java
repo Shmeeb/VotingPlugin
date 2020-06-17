@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
-import com.Ben12345rocks.AdvancedCore.UserManager.UUID;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UUID;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Objects.User;
 
@@ -29,10 +29,10 @@ public class UserManager {
 	}
 
 	public ArrayList<String> getAllUUIDs() {
-		return com.Ben12345rocks.AdvancedCore.UserManager.UserManager.getInstance().getAllUUIDs();
+		return com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserManager.getInstance().getAllUUIDs();
 	}
 
-	public User getVotingPluginUser(com.Ben12345rocks.AdvancedCore.UserManager.User user) {
+	public User getVotingPluginUser(com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.User user) {
 		return getVotingPluginUser(java.util.UUID.fromString(user.getUUID()));
 	}
 
@@ -50,7 +50,7 @@ public class UserManager {
 
 	@SuppressWarnings("deprecation")
 	public User getVotingPluginUser(String playerName) {
-		return new User(com.Ben12345rocks.AdvancedCore.UserManager.UserManager.getInstance().getProperName(playerName));
+		return new User(com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserManager.getInstance().getProperName(playerName));
 	}
 
 	@SuppressWarnings("deprecation")

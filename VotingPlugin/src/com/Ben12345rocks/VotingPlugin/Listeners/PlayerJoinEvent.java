@@ -5,8 +5,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 
-import com.Ben12345rocks.AdvancedCore.Listeners.AdvancedCoreLoginEvent;
-import com.Ben12345rocks.AdvancedCore.UserManager.UserStorage;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Listeners.AdvancedCoreLoginEvent;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserManager.UserStorage;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Objects.User;
 import com.Ben12345rocks.VotingPlugin.UserManager.UserManager;

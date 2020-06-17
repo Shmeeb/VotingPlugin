@@ -1,8 +1,8 @@
 package com.Ben12345rocks.VotingPlugin;
 
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardHandler;
-import com.Ben12345rocks.AdvancedCore.Rewards.Injected.RewardInject;
-import com.Ben12345rocks.AdvancedCore.Rewards.InjectedRequirement.RequirementInject;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.Injected.RewardInject;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.InjectedRequirement.RequirementInject;
 import com.Ben12345rocks.VotingPlugin.UserManager.UserManager;
 
 public class VotingPluginHooks {

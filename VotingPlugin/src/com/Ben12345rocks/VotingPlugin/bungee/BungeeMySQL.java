@@ -10,14 +10,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.Ben12345rocks.AdvancedCore.UserStorage.mysql.api.queries.Query;
-import com.Ben12345rocks.AdvancedCore.UserStorage.sql.Column;
-import com.Ben12345rocks.AdvancedCore.UserStorage.sql.DataType;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserStorage.mysql.api.queries.Query;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserStorage.sql.Column;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.UserStorage.sql.DataType;
 
 import net.md_5.bungee.config.Configuration;
 
 public class BungeeMySQL {
-	private com.Ben12345rocks.AdvancedCore.UserStorage.mysql.api.MySQL mysql;
+	private com.Ben12345rocks.VotingPlugin.AdvancedCore.UserStorage.mysql.api.MySQL mysql;
 
 	private List<String> columns = Collections.synchronizedList(new ArrayList<String>());
 
@@ -60,7 +60,7 @@ public class BungeeMySQL {
 		if (tablePrefix != null) {
 			name = tablePrefix + tableName;
 		}
-		mysql = new com.Ben12345rocks.AdvancedCore.UserStorage.mysql.api.MySQL(maxThreads);
+		mysql = new com.Ben12345rocks.VotingPlugin.AdvancedCore.UserStorage.mysql.api.MySQL(maxThreads);
 		if (!mysql.connect(hostName, "" + port, user, pass, database, useSSL, lifeTime, str)) {
 
 		}

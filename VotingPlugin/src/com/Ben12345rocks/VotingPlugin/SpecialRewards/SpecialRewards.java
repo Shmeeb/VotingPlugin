@@ -4,10 +4,10 @@ import java.util.Set;
 
 import org.bukkit.Bukkit;
 
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardBuilder;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardHandler;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardOptions;
-import com.Ben12345rocks.AdvancedCore.Util.Messages.StringParser;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardBuilder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardOptions;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Messages.StringParser;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Config.Config;
 import com.Ben12345rocks.VotingPlugin.Config.ConfigVoteSites;

@@ -8,21 +8,21 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 
-import com.Ben12345rocks.AdvancedCore.Util.EditGUI.EditGUI;
-import com.Ben12345rocks.AdvancedCore.Util.EditGUI.EditGUIButton;
-import com.Ben12345rocks.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueBoolean;
-import com.Ben12345rocks.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueList;
-import com.Ben12345rocks.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueNumber;
-import com.Ben12345rocks.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueString;
-import com.Ben12345rocks.AdvancedCore.Util.Inventory.BInventory;
-import com.Ben12345rocks.AdvancedCore.Util.Inventory.BInventory.ClickEvent;
-import com.Ben12345rocks.AdvancedCore.Util.Inventory.BInventoryButton;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.ArrayUtils;
-import com.Ben12345rocks.AdvancedCore.Util.Misc.PlayerUtils;
-import com.Ben12345rocks.AdvancedCore.Util.ValueRequest.InputMethod;
-import com.Ben12345rocks.AdvancedCore.Util.ValueRequest.ValueRequest;
-import com.Ben12345rocks.AdvancedCore.Util.ValueRequest.ValueRequestBuilder;
-import com.Ben12345rocks.AdvancedCore.Util.ValueRequest.Listeners.StringListener;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.EditGUI.EditGUI;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.EditGUI.EditGUIButton;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueBoolean;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueList;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueNumber;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.EditGUI.ValueTypes.EditGUIValueString;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Inventory.BInventory;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Inventory.BInventory.ClickEvent;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Inventory.BInventoryButton;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.ArrayUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.Misc.PlayerUtils;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.ValueRequest.InputMethod;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.ValueRequest.ValueRequest;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.ValueRequest.ValueRequestBuilder;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Util.ValueRequest.Listeners.StringListener;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Config.ConfigVoteSites;
 import com.Ben12345rocks.VotingPlugin.Events.PlayerVoteEvent;
@@ -92,7 +92,7 @@ public class AdminGUI {
 
 	public void loadHook() {
 		for (BInventoryButton b : adminGUIButtons()) {
-			com.Ben12345rocks.AdvancedCore.Commands.GUI.AdminGUI.getInstance().addButton(b);
+			com.Ben12345rocks.VotingPlugin.AdvancedCore.Commands.GUI.AdminGUI.getInstance().addButton(b);
 		}
 	}
 

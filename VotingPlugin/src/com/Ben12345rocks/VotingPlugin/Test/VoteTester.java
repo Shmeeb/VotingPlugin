@@ -2,9 +2,9 @@ package com.Ben12345rocks.VotingPlugin.Test;
 
 import java.util.ArrayList;
 
-import com.Ben12345rocks.AdvancedCore.Rewards.Reward;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardHandler;
-import com.Ben12345rocks.AdvancedCore.Rewards.RewardOptions;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.Reward;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardHandler;
+import com.Ben12345rocks.VotingPlugin.AdvancedCore.Rewards.RewardOptions;
 import com.Ben12345rocks.VotingPlugin.Main;
 import com.Ben12345rocks.VotingPlugin.Events.PlayerVoteEvent;
 import com.Ben12345rocks.VotingPlugin.Objects.User;
