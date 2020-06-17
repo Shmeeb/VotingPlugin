@@ -120,7 +120,6 @@ public class SkullHandler {
 
 	@SuppressWarnings("unchecked")
 	public void load() {
-		try {
 			/*
 			 * gameProfile =
 			 * ReflectionUtils.getClassForName("com.mojang.authlib.GameProfile");
@@ -130,7 +129,8 @@ public class SkullHandler {
 			 * String.class);
 			 * propertyConstructor = property.getConstructor(String.class, String.class);
 			 * gameProfileGetProperties = gameProfile.getDeclaredMethod("getProperties");
-			 */
+
+
 
 			craftItemStack = ReflectionUtils.getClassForName(
 					"org.bukkit.craftbukkit." + NMSManager.getInstance().getVersion() + "inventory.CraftItemStack");
@@ -148,6 +148,8 @@ public class SkullHandler {
 		} catch (SecurityException | NoSuchMethodException e) {
 			e.printStackTrace();
 		}
+
+		*/
 
 		if (AdvancedCorePlugin.getInstance().getOptions().isPreloadSkulls()) {
 			Bukkit.getScheduler().runTaskAsynchronously(AdvancedCorePlugin.getInstance(), new Runnable() {
